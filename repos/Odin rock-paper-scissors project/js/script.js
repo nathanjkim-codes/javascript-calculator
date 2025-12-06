@@ -12,7 +12,7 @@ const resetDiv = document.getElementById("reset");
 const buttons = document.querySelectorAll("#choices button");
 
 // Computer's choice function
-function computerChoice() {
+function getComputerChoice() {
   const choices = ["rock", "paper", "scissors"];
   let randomIndex = Math.floor(Math.random() * 3);
   return choices[randomIndex];
@@ -34,6 +34,8 @@ function playRound(humanChoice, computerChoice) {
     computerScore++;
     roundResult = `you lose! ${computerChoice} beats ${humanChoice}`;
   }
-}
+
 
 roundsPlayed++;
+
+
