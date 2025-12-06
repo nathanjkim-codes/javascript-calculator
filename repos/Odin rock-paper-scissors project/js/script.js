@@ -17,7 +17,7 @@ function computerChoice() {
   return choices[randomIndex];
 }
 
-// Compares choices and determines the result of one round
+// play round function Compares choices and determines the result of one round
 function playRound(humanChoice, computerChoice) {
   let roundResult = "";
   if (humanChoice === computerChoice) {
@@ -34,3 +34,5 @@ function playRound(humanChoice, computerChoice) {
     roundResult = `you lose! ${computerChoice} beats ${humanChoice}`;
   }
 }
+
+roundsPlayed++;
