@@ -16,3 +16,21 @@ function computerChoice() {
   let randomIndex = Math.floor(Math.random() * 3);
   return choices[randomIndex];
 }
+
+// Compares choices and determines the result of one round
+function playRound(humanChoice, computerChoice) {
+  let roundResult = "";
+  if (humanChoice === computerChoice) {
+    roundResult = "It's a tie!";
+  } else if (
+    (humanChoice === "rock" && computerChoice === "scissors") ||
+    (humanChoice === "paper" && computerChoice === "rock") ||
+    (humanChoice === "scissors" && computerChoice === "paper")
+  ) {
+    humanScore++;
+    roundResult = `you win! ${humanChoice} beats ${computerChoice}`;
+  } else {
+    computerScore++;
+    roundResult = `you lose! ${computerChoice} beats ${humanChoice}`;
+  }
+}
