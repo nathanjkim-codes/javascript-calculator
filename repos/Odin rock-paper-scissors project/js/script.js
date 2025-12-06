@@ -7,6 +7,7 @@ const maxRounds = 5;
 //
 const resultDiv = document.getElementById("result");
 const scoreDiv = document.getElementById("score");
+const roundsPlayedDiv = document.getElementById("roundsPlayed");
 const resetDiv = document.getElementById("reset");
 const buttons = document.querySelectorAll("#choices button");
 
