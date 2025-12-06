@@ -35,7 +35,10 @@ function playRound(humanChoice, computerChoice) {
     roundResult = `you lose! ${computerChoice} beats ${humanChoice}`;
   }
 
+  roundsPlayed++;
 
-roundsPlayed++;
-
-
+  // Update UI
+  resultDiv.textContent = roundResult;
+  scoreDiv.textContent = `Score: Human ${humanScore} - Computer ${computerScore}`;
+  roundsPlayedDiv.textContent = `Rounds Played: ${roundsPlayed} / ${maxRounds}`;
+}
