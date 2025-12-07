@@ -42,3 +42,12 @@ function playRound(humanChoice, computerChoice) {
   scoreDiv.textContent = `Score: Human ${humanScore} - Computer ${computerScore}`;
   roundsPlayedDiv.textContent = `Rounds Played: ${roundsPlayed} / ${maxRounds}`;
 }
+
+// Button click events
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    // Button class name is used as the choice (rock, paper, scissors)
+    const humanChoice = button.className;
+    const computerChoice = getComputerChoice();
+
+    playRound(humanChoice, computerChoice);
