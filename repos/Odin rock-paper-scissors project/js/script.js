@@ -51,3 +51,11 @@ buttons.forEach((button) => {
     const computerChoice = getComputerChoice();
 
     playRound(humanChoice, computerChoice);
+
+
+      // Disable buttons
+      buttons.forEach((btn) => (btn.disabled = true));
+    }
+  });
+});    
+
