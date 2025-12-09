@@ -1,46 +1,28 @@
-# Rock-Paper-Scissors Game
+# Rock-Paper-Scissors Project
 
-## How I Made This
+## Project Overview
 
-This is a simple Rock-Paper-Scissors game I built using JavaScript.  
-The game plays 5 rounds. Each round, both the player and the computer pick either rock, paper, or scissors.
+This is a simple Rock-Paper-Scissors game where you play against the computer. You can choose rock, paper, or scissors, and the game keeps track of your score and the number of rounds played.
 
-### Functions I Created
-
-- **getComputerChoice()**  
-  This function makes the computer pick rock, paper, or scissors randomly.  
-  It picks a random number (0, 1, or 2) and returns the matching choice as a string.
-
-- **getHumanChoice()**  
-  This function asks the player to type rock, paper, or scissors.  
-  It makes sure the input is lowercase and removes spaces around it so different capitalizations still work.
-
-- **playRound(humanChoice, computerChoice)**  
-  This function plays one round.  
-  It compares the player’s choice and the computer’s choice to decide who wins.  
-  If both choices are the same, it’s a tie.  
-  If the player wins, their score goes up by 1. Otherwise, the computer’s score goes up.  
-  It also prints out who won that round.
-
-- **playGame()**  
-  This function runs the whole game.  
-  It plays 5 rounds by calling `playRound` 5 times and keeps track of the scores.  
-  At the end, it announces the overall winner or if the game is tied.
+This project is part of the Odin Project’s Git branch exercise. The goal was to create a feature branch, develop a new UI in that feature branch, and then merge it into the main branch. However, I chose to rebuild the code from scratch and then merged it. This approach worked well without conflicts, but it may not always be the best practice.
 
 ---
 
-### What I Learned from My Git Commits
+## What I Learned
 
-At first, I didn’t commit my changes often and had some messy commits.  
-I realized that committing small changes frequently helps me keep better track of my work and makes it easier to fix mistakes.  
-This project taught me the importance of good commit habits, and I’m working on improving that.
+- **Data Attributes**: I learned how to use `data-choice` in HTML and access it in JavaScript.
+- **Event Listeners**: I practiced adding click events to buttons.
+- **Game Logic**: I learned how to keep track of scores and rounds.
+- **Clean Code**: I gained a deeper understanding of writing simple and clear code and learned to connect logic efficiently to achieve consistent functionality.
 
-## What I Learned from project
+## Git Branching and Merging
 
-At first, I thought the game would need complicated math to figure out who wins.  
-But I learned that it’s really about writing rules using conditions in code.  
-For example, the rule "rock beats scissors" is written as a condition in the code.  
-When the condition is true, it means the player wins.
+- **Creating Feature Branches**: I learned how to create a feature branch to develop new features separately from the main branch.
+- **Merging Changes**: I practiced merging the feature branch into the main branch.
+- **Learning from Practice**: By rebuilding the code and merging it, I gained a deeper understanding of branching and project organization.
 
-I still have a lot to learn, but finishing this small project helped me understand how JavaScript works with functions and conditions.  
-It wasn’t easy, but I’m proud I completed it and want to keep improving!
+## Using Resources
+
+- **Stack Overflow and Googling**: Throughout the project, I used Stack Overflow and Google to find solutions and deepen my understanding.
+- **AI Assistance**: I also used AI help to get clearer explanations and improve my code.
+- **Deeper Understanding**: All these resources helped me learn more and gain confidence in writing functional JavaScript code and managing projects with Git.
