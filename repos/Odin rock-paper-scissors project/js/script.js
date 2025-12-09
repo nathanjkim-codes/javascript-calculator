@@ -52,10 +52,21 @@ buttons.forEach((button) => {
 
     playRound(humanChoice, computerChoice);
 
-
-      // Disable buttons
-      buttons.forEach((btn) => (btn.disabled = true));
-    }
+    // Disable buttons
+    buttons.forEach((btn) => (btn.disabled = true));
   });
-});    
+});
 
+// Reset game
+resetDiv.addEventListener("click", () => {
+  humanScore = 0;
+  computerScore = 0;
+  roundsPlayed = 0;
+
+  resultDiv.textContent = "";
+  scoreDiv.textContent = "Score: Human 0 - Computer 0";
+  roundsPlayedDiv.textContent = "Rounds Played: 0 / 5";
+
+  // Enable buttons again
+  buttons.forEach((btn) => (btn.disabled = false));
+});
