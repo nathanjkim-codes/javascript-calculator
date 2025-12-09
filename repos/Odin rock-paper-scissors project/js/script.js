@@ -47,13 +47,24 @@ function playRound(humanChoice, computerChoice) {
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     // Button class name is used as the choice (rock, paper, scissors)
-    const humanChoice = button.className;
+    const humanChoice = button.dataset.choice;
     const computerChoice = getComputerChoice();
 
     playRound(humanChoice, computerChoice);
 
-    // Disable buttons
-    buttons.forEach((btn) => (btn.disabled = true));
+    // Check if game is over
+    if (roundsPlayed === maxRounds) {
+      if (humanScore > computerScore) {
+        resultDiv.textContent = "🎉 You won the game!";
+      } else if (computerScore > humanScore) {
+        resultDiv.textContent = "😢 You lost the game!";
+      } else {
+        resultDiv.textContent = "🤝 The game is a tie!";
+      }
+
+      // Disable buttons
+      buttons.forEach((btn) => (btn.disabled = true));
+    }
   });
 });
 
