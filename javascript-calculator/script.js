@@ -1,0 +1,5 @@
+// ===== Basic Math Operation Functions =====
+
+function add(a, b) {
+  return a + b;
+}
