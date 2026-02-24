@@ -34,10 +34,15 @@ let firstNumber = null; // No value yet
 let secondNumber = null; // No value yet
 let operator = null; // no operator yet
 
-//
+// ===== Operate Function =====
+
+// Takes an operator and two numbers,then performs calcultion
 function operate(operator, a, b) {
   if (operator === "+") return a + b;
   if (operator === "-") return a - b;
   if (operator === "*") return a * b;
-  if (operator === "/") return a / b;
+  if (operator === "/") {
+    if (b === 0) return "Don't divide by 0!";
+    return a / b;
+  }
 }
