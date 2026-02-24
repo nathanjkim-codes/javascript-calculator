@@ -4,16 +4,19 @@
 function add(a, b) {
   return a + b;
 }
+console.log(add(3, 5)); // 8
 
 // Subtracts second number from first number
 function subtract(a, b) {
   return a - b;
 }
+console.log(subtract(10, 3)); // 7
 
 // Multiplies two numbers
 function multiply(a, b) {
   return a * b;
 }
+console.log(multiply(3, 7)); // 21
 
 // Divides first number by second number
 function divide(a, b) {
@@ -22,14 +25,8 @@ function divide(a, b) {
   }
   return a / b;
 }
-
-function divide(a, b) {
-  if (b === 0) {
-    return "Don't divide by 0!";
-  } else {
-    return a / b;
-  }
-}
+console.log(divide(3, 0)); // Don't divide by 0!
+console.log(divide(10, 5)); // 2
 
 // Variables to update display for later
 // Initilized as null to distinguish from 0
