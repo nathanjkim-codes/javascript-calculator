@@ -36,7 +36,7 @@ let operator = null; // No operator yet
 
 // ===== Operate Function =====
 
-// Takes an operator and two numbers,then performs calcultion
+// Takes an operator and two numbers,then performs calculation
 function operate(operator, a, b) {
   if (operator === "+") return a + b;
   if (operator === "-") return a - b;
@@ -47,5 +47,16 @@ function operate(operator, a, b) {
   }
 }
 
-//
+// Update number variable and display when a digit button is clicked
 let currentNumber = ""; // Empty string to join Numbers( "1" + "2" = "12")
+
+const display = document.getElementById("display");
+
+digitButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const digit = button.textContent;
+
+    updateCurrentNumber(digit);
+    updateDisplay();
+  });
+});
