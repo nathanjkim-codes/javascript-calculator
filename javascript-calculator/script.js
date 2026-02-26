@@ -32,7 +32,7 @@ console.log(divide(10, 5)); // 2
 // Initilized as null to distinguish from 0
 let firstNumber = null; // No value yet
 let secondNumber = null; // No value yet
-let operator = null; // no operator yet
+let operator = null; // No operator yet
 
 // ===== Operate Function =====
 
@@ -46,3 +46,6 @@ function operate(operator, a, b) {
     return a / b;
   }
 }
+
+//
+let currentNumber = ""; // Empty string to join Numbers( "1" + "2" = "12")
