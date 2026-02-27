@@ -50,13 +50,23 @@ function operate(operator, a, b) {
 // Update number variable and display when a digit button is clicked
 let currentNumber = ""; // Empty string to join Numbers( "1" + "2" = "12")
 
+// Select DOM elements
+// Select all number buttons
+const numberButtons = document.querySelectorAll(".number");
+
+// Select the calculator display
 const display = document.getElementById("display");
 
-digitButtons.forEach((button) => {
+// Add click event listeners to each number button
+numberButtons.forEach((button) => {
   button.addEventListener("click", () => {
+    // Get the digit from the clicked button
     const digit = button.textContent;
 
-    updateCurrentNumber(digit);
-    updateDisplay();
+    // Append the digit to the current number
+    currentNumber += digit;
+
+    // Update the display to reflect the current number
+    display.textContent = currentNumber;
   });
 });
