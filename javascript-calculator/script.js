@@ -86,14 +86,13 @@ function inputOperator(operator) {
 function calculate() {
   const num1 = parseFloat(firstNumber);
   const num2 = parseFloat(currentNumber);
-  let result = 0;
 
-  const result = operate(calculationOperator, firstNumber, currentNumber);
+  const result = operate(calculationOperator, num1, num2);
 
   display.textContent = result;
 
   currentNumber = result;
 
   firstNumber = null;
-  calculatrionOperator = null;
+  calculationOperator = null;
 }
