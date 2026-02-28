@@ -46,6 +46,11 @@ function operate(operator, a, b) {
     return a / b;
   }
 }
+console.log(operate("+", 3, 5)); // 8
+console.log(operate("-", 10, 3)); // 7
+console.log(operate("*", 3, 7)); // 21
+console.log(operate("/", 3, 0)); // Don't divide by 0!
+console.log(operate("/", 10, 5)); // 2
 
 // Update number variable and display when a digit button is clicked
 let currentNumber = ""; // Empty string to join Numbers( "1" + "2" = "12")
