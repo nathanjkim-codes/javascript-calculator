@@ -75,24 +75,38 @@ numberButtons.forEach((button) => {
     display.textContent = currentNumber;
   });
 });
+
+// Store the operator selected by the user(+. -, *, /)
+// Initially null because no operator has been chosen yet
 let calculationOperator = null;
 
+// this function is called when an operator button is selected
 function inputOperator(operator) {
-  firstNumber = currentNumber;
-  calculationOperator = operator;
-  currentNumber = "";
+  firstNumber = currentNumber; // Save the number
+  calculationOperator = operator; // save the operator
+  currentNumber = ""; // clear currentNumber
 }
 
+// Called when the '=' button is clicked
 function calculate() {
-  const num1 = parseFloat(firstNumber);
-  const num2 = parseFloat(currentNumber);
+  const num1 = parseFloat(firstNumber); // Convert string to number
+  const num2 = parseFloat(currentNumber); // Convert string to number
 
-  const result = operate(calculationOperator, num1, num2);
+  const result = operate(calculationOperator, num1, num2); // perform the calculation
 
-  display.textContent = result;
+  display.textContent = result; // Show result on the display
 
-  currentNumber = result;
+  currentNumber = result; // Save result for next calculation
 
-  firstNumber = null;
-  calculationOperator = null;
+  firstNumber = null; // Reset firstNumber
+  calculationOperator = null; // Reset operator
 }
+
+// Select all operator buttons(+, -, *, /)
+const operatorButton = document.querySelectorAll(".operator");
+
+operatorButton.forEach((button) => {
+  button.addEventListener("click", () => {
+    inputOperator(button.textContent); // Send the symbol of operator button to the inputOperator function
+  });
+});
