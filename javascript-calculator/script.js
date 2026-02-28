@@ -31,7 +31,7 @@ console.log(divide(10, 5)); // 2
 // Variables to update display for later
 // Initilized as null to distinguish from 0
 let firstNumber = null; // No value yet
-let secondNumber = null; // No value yet
+
 let operator = null; // No operator yet
 
 // ===== Operate Function =====
@@ -75,3 +75,25 @@ numberButtons.forEach((button) => {
     display.textContent = currentNumber;
   });
 });
+let calculationOperator = null;
+
+function inputOperator(operator) {
+  firstNumber = currentNumber;
+  calculationOperator = operator;
+  currentNumber = "";
+}
+
+function calculate() {
+  const num1 = parseFloat(firstNumber);
+  const num2 = parseFloat(currentNumber);
+  let result = 0;
+
+  const result = operate(calculationOperator, firstNumber, currentNumber);
+
+  display.textContent = result;
+
+  currentNumber = result;
+
+  firstNumber = null;
+  calculatrionOperator = null;
+}
