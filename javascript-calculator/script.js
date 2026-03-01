@@ -38,12 +38,12 @@ let operator = null; // No operator yet
 
 // Takes an operator and two numbers,then performs calculation
 function operate(operator, a, b) {
-  if (operator === "+") return a + b;
-  if (operator === "-") return a - b;
-  if (operator === "*") return a * b;
+  if (operator === "+") return add(a, b);
+  if (operator === "-") return subtract(a, b);
+  if (operator === "*") return multiply(a, b);
   if (operator === "/") {
     if (b === 0) return "Don't divide by 0!";
-    return a / b;
+    return divide(a, b);
   }
 }
 console.log(operate("+", 3, 5)); // 8
