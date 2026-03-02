@@ -68,8 +68,21 @@ numberButtons.forEach((button) => {
     // Append the digit to the current number
     currentNumber += digit;
 
-    // Update the display to reflect the current number
-    display.textContent = currentNumber;
+    let text = ""; // Initialize the content to show on the display
+
+    if (firstNumber) {
+      text += firstNumber; // Add firstNumber if it exists
+    }
+
+    if (calculationOperator) {
+      text += " " + calculationOperator; // Add operator if it exists
+    }
+
+    if (currentNumber) {
+      text += " " + currentNumber; // Add currentNumber if it exists
+    }
+
+    display.textContent = text; // Show the text on the display
   });
 });
 
