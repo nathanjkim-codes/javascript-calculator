@@ -31,8 +31,8 @@ console.log(divide(10, 5)); // 2
 // Variables to update display for later
 // Initilized as null to distinguish from 0
 let firstNumber = null; // No value yet
-
-let operator = null; // No operator yet
+let currentNumber = ""; // Empty string to join Numbers( "1" + "2" = "12")
+let calculationOperator = null; // No operator yet
 
 // ===== Operate Function =====
 
@@ -53,9 +53,6 @@ console.log(operate("/", 3, 0)); // Don't divide by 0!
 console.log(operate("/", 10, 5)); // 2
 
 // Update number variable and display when a digit button is clicked
-let currentNumber = ""; // Empty string to join Numbers( "1" + "2" = "12")
-
-// Select DOM elements
 // Select all number buttons
 const numberButtons = document.querySelectorAll(".number");
 
@@ -77,9 +74,6 @@ numberButtons.forEach((button) => {
 });
 
 // Store the operator selected by the user(+. -, *, /)
-// Initially null because no operator has been chosen yet
-let calculationOperator = null;
-
 // this function is called when an operator button is selected
 function inputOperator(operator) {
   firstNumber = currentNumber; // Save the number
