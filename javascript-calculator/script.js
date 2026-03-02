@@ -102,5 +102,6 @@ const operatorButton = document.querySelectorAll(".operator");
 operatorButton.forEach((button) => {
   button.addEventListener("click", () => {
     inputOperator(button.textContent); // Send the symbol of operator button to the inputOperator function
+    display.textContent = firstNumber + " " + calculationOperator;
   });
 });
