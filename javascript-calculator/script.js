@@ -90,7 +90,7 @@ numberButtons.forEach((button) => {
 // this function is called when an operator button is selected
 function inputOperator(operator) {
   firstNumber = currentNumber; // Save the number
-  calculationOperator = operator; // save the operator
+  Operator = operator; // save the operator
   currentNumber = ""; // clear currentNumber
 }
 
