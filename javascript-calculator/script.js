@@ -118,3 +118,10 @@ operatorButton.forEach((button) => {
     display.textContent = firstNumber + " " + calculationOperator;
   });
 });
+
+// add equals button click event to trigger calculation
+const equalsButton = document.querySelector(".equal");
+
+equalsButton.addEventListener("click", () => {
+  calculate();
+});
