@@ -99,14 +99,14 @@ function calculate() {
   const num1 = parseFloat(firstNumber); // Convert string to number
   const num2 = parseFloat(currentNumber); // Convert string to number
 
-  const result = operate(calculationOperator, num1, num2); // perform the calculation
+  const result = operate(operator, num1, num2); // perform the calculation
 
   display.textContent = result; // Show result on the display
 
   currentNumber = result; // Save result for next calculation
 
   firstNumber = null; // Reset firstNumber
-  calculationOperator = null; // Reset operator
+  operator = null; // Reset operator
 }
 
 // Select all operator buttons(+, -, *, /)
@@ -115,7 +115,7 @@ const operatorButton = document.querySelectorAll(".operator");
 operatorButton.forEach((button) => {
   button.addEventListener("click", () => {
     inputOperator(button.textContent); // Send the symbol of operator button to the inputOperator function
-    display.textContent = firstNumber + " " + calculationOperator;
+    display.textContent = firstNumber + " " + Operator;
   });
 });
 
