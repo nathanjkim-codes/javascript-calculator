@@ -74,8 +74,8 @@ numberButtons.forEach((button) => {
       text += firstNumber; // Add firstNumber if it exists
     }
 
-    if (calculationOperator) {
-      text += " " + calculationOperator; // Add operator if it exists
+    if (operator) {
+      text += " " + operator; // Add operator if it exists
     }
 
     if (currentNumber) {
@@ -88,9 +88,9 @@ numberButtons.forEach((button) => {
 
 // Store the operator selected by the user(+. -, *, /)
 // this function is called when an operator button is selected
-function inputOperator(operator) {
+function inputOperator(op) {
   firstNumber = currentNumber; // Save the number
-  Operator = operator; // save the operator
+  operator = op; // save the operator
   currentNumber = ""; // clear currentNumber
 }
 
