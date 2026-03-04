@@ -114,8 +114,27 @@ const operatorButton = document.querySelectorAll(".operator");
 
 operatorButton.forEach((button) => {
   button.addEventListener("click", () => {
-    inputOperator(button.textContent); // Send the symbol of operator button to the inputOperator function
-    display.textContent = firstNumber + " " + Operator;
+    const clickedOperator = button.textContent;
+
+    // Prevent operator input if no number has been entered
+    if (currentNumber === "") return;
+
+    // If this is the first operator, store the current number as firstNumber
+    if (firstNumber === null) {
+      firstNumber = currentNumber;
+    } else {
+      // If firstNumber already exists, perform the calculation
+      firstNumber = operate(operator, firstNumber, currentNumber);
+    }
+
+    // Store the clicked operator
+    operator = clickedOperator;
+
+    // Reset currentNumber to prepare for the next number input
+    currentNumber = "";
+
+    // Update the display to show the current expression
+    display.textContent = firstNumber + " " + operator;
   });
 });
 
