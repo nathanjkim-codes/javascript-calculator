@@ -144,3 +144,14 @@ const equalsButton = document.querySelector(".equal");
 equalsButton.addEventListener("click", () => {
   calculate();
 });
+
+// When the clear button is clicked, reset the calculator
+const clearButton = document.querySelector(".clear");
+
+clearButton.addEventlistener("click", () => {
+  firstNumber = null;
+  currentNumber = "";
+  operator = null;
+
+  display.textContent = "0";
+});
