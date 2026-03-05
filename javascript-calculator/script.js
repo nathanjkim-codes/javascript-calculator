@@ -155,3 +155,22 @@ clearButton.addEventlistener("click", () => {
 
   display.textContent = "0";
 });
+
+// Removes the last digit from the current number when the backspace button is clicked
+const backspaceButton = document.querySelector(".backspace");
+
+backspaceButton.addEventListener("click", () => {
+  currentNumber = currentNumber.slice(0, -1);
+  // Remove the last character from currentNumber
+  // slice(0, -1) means: take the string from index 0 up to the last character (excluding it)
+
+  if (currentNumber === "") {
+    // If all digits are deleted and the string becomes empty
+
+    display.textContent = "0";
+    // Show "0" on the display as the default value
+  } else {
+    display.textContent = currentNumber;
+    // Otherwise show the updated number after removing the last digit
+  }
+});
