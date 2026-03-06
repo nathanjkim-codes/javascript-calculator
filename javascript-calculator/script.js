@@ -174,3 +174,38 @@ backspaceButton.addEventListener("click", () => {
     // Otherwise show the updated number after removing the last digit
   }
 });
+
+// ===== Keyboard Input Support =====
+// This section allows the calculator to be controlled using the keyboard
+// instead of only clicking the on-screen buttons.
+
+document.addEventListener("keydown", (event) => {
+  const key = event.key;
+
+  // Number keys (0-9)
+  // When the user presses a number key, we append that digit
+  // to the currentNumber string so multi-digit numbers can be built
+  if (key >= "0" && key <= "9") {
+    currentNumber += key;
+
+    // Create the text that will be shown on the calculator display
+    let text = "";
+
+    // If a first number already exists
+    // include it in the display
+    if (firstNumber) {
+      text += firstNumber;
+    }
+    // If an operator has been selected
+    // Example display: "12 +"
+    if (operator) {
+      text += " " + operator;
+    }
+    // Show the number currently being typed
+    if (currentNumber) {
+      text += " " + currentNumber;
+    }
+    // Update the calculator screen
+    display.textContent = text;
+  }
+});
