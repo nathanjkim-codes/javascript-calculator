@@ -209,3 +209,6 @@ document.addEventListener("keydown", (event) => {
     display.textContent = text;
   }
 });
+
+// Operator keys
+  if (key === "+" || key === "-" || key === "*" || key === "/") 
