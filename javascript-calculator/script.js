@@ -211,4 +211,27 @@ document.addEventListener("keydown", (event) => {
 });
 
 // Operator keys
-  if (key === "+" || key === "-" || key === "*" || key === "/") 
+// When the user presses an operator key (+, -, *, /)
+if (key === "+" || key === "-" || key === "*" || key === "/") {
+  // Prevent operator input if the user hasn't entered a number yet
+  if (currentNumber === "") return;
+
+  // If this is the first operation
+  // Save the currentNumber as firstNumber
+  if (firstNumber === null) {
+    firstNumber = currentNumber;
+  } else {
+    // If firstNumber already exists,
+    // perform the previous calculation first
+    firstNumber = operate(operator, firstNumber, currentNumber);
+  }
+
+  // Store the operator that the user pressed
+  operator = key;
+
+  // Reset currentNumber so the user can type the next number
+  currentNumber = "";
+
+  // Update the calculator display
+  display.textContent = firstNumber + " " + operator;
+}
