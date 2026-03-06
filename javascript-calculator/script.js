@@ -148,7 +148,7 @@ equalsButton.addEventListener("click", () => {
 // When the clear button is clicked, reset the calculator
 const clearButton = document.querySelector(".clear");
 
-clearButton.addEventlistener("click", () => {
+clearButton.addEventListener("click", () => {
   firstNumber = null;
   currentNumber = "";
   operator = null;
