@@ -235,3 +235,7 @@ if (key === "+" || key === "-" || key === "*" || key === "/") {
   // Update the calculator display
   display.textContent = firstNumber + " " + operator;
 }
+// Enter or "=" to calculate
+if (key === "Enter" || key === "=") {
+  calculate();
+}
