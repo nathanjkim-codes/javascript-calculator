@@ -249,4 +249,12 @@ document.addEventListener("keydown", (event) => {
       display.textContent = currentNumber;
     }
   }
+  // Escape or "c" → clear
+  if (key === "Escape" || key.toLowerCase() === "c") {
+    firstNumber = null;
+    currentNumber = "";
+    operator = null;
+
+    display.textContent = "0";
+  }
 });
