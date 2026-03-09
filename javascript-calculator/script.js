@@ -239,3 +239,14 @@ if (key === "+" || key === "-" || key === "*" || key === "/") {
 if (key === "Enter" || key === "=") {
   calculate();
 }
+
+// Backspace → delete last digit
+if (key === "Backspace") {
+  currentNumber = currentNumber.slice(0, -1);
+
+  if (currentNumber === "") {
+    display.textContent = "0";
+  } else {
+    display.textContent = currentNumber;
+  }
+}
