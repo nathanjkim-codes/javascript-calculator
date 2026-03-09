@@ -193,7 +193,7 @@ document.addEventListener("keydown", (event) => {
 
     // If a first number already exists
     // include it in the display
-    if (firstNumber) {
+    if (firstNumber !== null) {
       text += firstNumber;
     }
     // If an operator has been selected
