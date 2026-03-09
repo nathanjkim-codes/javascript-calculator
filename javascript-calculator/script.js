@@ -208,45 +208,45 @@ document.addEventListener("keydown", (event) => {
     // Update the calculator screen
     display.textContent = text;
   }
+
+  // Operator keys
+  // When the user presses an operator key (+, -, *, /)
+  if (key === "+" || key === "-" || key === "*" || key === "/") {
+    // Prevent operator input if the user hasn't entered a number yet
+    if (currentNumber === "") return;
+
+    // If this is the first operation
+    // Save the currentNumber as firstNumber
+    if (firstNumber === null) {
+      firstNumber = currentNumber;
+    } else {
+      // If firstNumber already exists,
+      // perform the previous calculation first
+      firstNumber = operate(operator, firstNumber, currentNumber);
+    }
+
+    // Store the operator that the user pressed
+    operator = key;
+
+    // Reset currentNumber so the user can type the next number
+    currentNumber = "";
+
+    // Update the calculator display
+    display.textContent = firstNumber + " " + operator;
+  }
+  // Enter or "=" to calculate
+  if (key === "Enter" || key === "=") {
+    calculate();
+  }
+
+  // Backspace → delete last digit
+  if (key === "Backspace") {
+    currentNumber = currentNumber.slice(0, -1);
+
+    if (currentNumber === "") {
+      display.textContent = "0";
+    } else {
+      display.textContent = currentNumber;
+    }
+  }
 });
-
-// Operator keys
-// When the user presses an operator key (+, -, *, /)
-if (key === "+" || key === "-" || key === "*" || key === "/") {
-  // Prevent operator input if the user hasn't entered a number yet
-  if (currentNumber === "") return;
-
-  // If this is the first operation
-  // Save the currentNumber as firstNumber
-  if (firstNumber === null) {
-    firstNumber = currentNumber;
-  } else {
-    // If firstNumber already exists,
-    // perform the previous calculation first
-    firstNumber = operate(operator, firstNumber, currentNumber);
-  }
-
-  // Store the operator that the user pressed
-  operator = key;
-
-  // Reset currentNumber so the user can type the next number
-  currentNumber = "";
-
-  // Update the calculator display
-  display.textContent = firstNumber + " " + operator;
-}
-// Enter or "=" to calculate
-if (key === "Enter" || key === "=") {
-  calculate();
-}
-
-// Backspace → delete last digit
-if (key === "Backspace") {
-  currentNumber = currentNumber.slice(0, -1);
-
-  if (currentNumber === "") {
-    display.textContent = "0";
-  } else {
-    display.textContent = currentNumber;
-  }
-}
