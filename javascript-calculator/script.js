@@ -70,7 +70,7 @@ numberButtons.forEach((button) => {
 
     let text = ""; // Initialize the content to show on the display
 
-    if (firstNumber) {
+    if (firstNumber !== null) {
       text += firstNumber; // Add firstNumber if it exists
     }
 
