@@ -258,3 +258,18 @@ document.addEventListener("keydown", (event) => {
     display.textContent = "0";
   }
 });
+// Handle decimal input
+const decimalButton = document.querySelector(".decimal");
+
+decimalButton.addEventListener("click", () => {
+  // Check if the number alrady has decimal
+  if (currentNumber.includes(".")) {
+    return;
+  }
+
+  // Prevent multiple decimals
+  currentNumber += ".";
+
+  // Update the display
+  display.textContent = currentNumber;
+});
